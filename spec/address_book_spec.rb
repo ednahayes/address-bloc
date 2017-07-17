@@ -165,4 +165,16 @@ RSpec.describe AddressBook do
      end 
      
    end
+   
+    # Test the nuke method assignment-8b
+   describe "#nuke" do
+     it "should delete all entries" do
+       book.add_entry("Ada Lovelace", "555.555.1018", "ada@blocmail.com")
+       book.add_entry("Ada Lovelace", "555.555.1018", "ada@blocmail.com")
+       
+       book.nuke
+       expect(book.entries.size).to eq 0
+     end
+    end
+    
  end
