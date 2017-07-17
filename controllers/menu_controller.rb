@@ -14,7 +14,7 @@ require_relative '../models/address_book'
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - View Entry Number n"
+     puts "5 - Delete all entries"
      # #7
      puts "6 - Exit"
      print "Enter your selection: "
@@ -40,7 +40,7 @@ require_relative '../models/address_book'
          main_menu
         when 5
          system "clear"
-         view_entry_number
+         detonate_all_entries
          main_menu 
        when 6
          puts "Good-bye!"
@@ -227,4 +227,17 @@ require_relative '../models/address_book'
      end
    end
    
+   #assignment -8 
+   def detonate_all_entries
+     print "are you sure you want to delete all entries (yes or no): "
+     answer = gets.chomp
+     if answer == yes
+      @entries.each do |entry|
+      entry.delete
+      return "#{entries.deleted} entries deleted"
+     end
+      system "clear"
+      main_menu
+     end
+   end
  end
