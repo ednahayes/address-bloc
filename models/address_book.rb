@@ -61,4 +61,19 @@
      return nil       
    end  
    
+   def iterative_search(name)
+    i = 0
+    array = entries.length
+    while i <= array
+     if name == entries[i]
+      return entries[i]
+     else
+      i +=1
+     end
+    end
+    
+    return nil
+   end
+   
  end
+   
