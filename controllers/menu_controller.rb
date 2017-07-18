@@ -40,10 +40,10 @@ require_relative '../models/address_book'
          main_menu
         when 5
          system "clear"
-         puts "all #{entries} entries deleted"
-
-         system "clear"
-         main_menu 
+         nuke
+         puts "all entries deleted"
+         # system "clear"
+         # main_menu 
        when 6
          puts "Good-bye!"
          # #8
@@ -231,8 +231,7 @@ require_relative '../models/address_book'
    
    #assignment-8b
    def nuke
-    @entries = []
-    puts "all #{entries} entries deleted"
+    @address_book.entries = []
    end
    
  end
